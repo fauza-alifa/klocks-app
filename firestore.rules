@@ -14,7 +14,7 @@ service cloud.firestore {
     function day(time) { return int((time.toMillis() + 25200000) / 86400000); }
     function fresh(uid) {
       // TODO-F06b: guard belum ada, atau harinya lebih lama dari request.time (WIB).
-      return !exist(guardPath(uid)) || day(get(guardPath(uid)).data.lastAt) < day(request.time);
+      return !exists(guardPath(uid)) || day(get(guardPath(uid)).data.lastAt) < day(request.time);
     }
     function linked(uid, id) {
       // TODO-F06c: hasil batch harus menghubungkan guard, waktu server, dan ID record.
