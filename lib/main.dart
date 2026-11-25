@@ -11,10 +11,7 @@ Future<void> main() async {
   await initializeDateFormatting('id');
   Object? startupError;
   try {
-    // TODO-F01: Tambahkan import firebase_core dan inisialisasi Firebase.
-    // Konfigurasi native diunduh dari Console; tanpa Firebase CLI.
     await Firebase.initializeApp();
-    await Future<void>.error(UnimplementedError('TODO-F01: inisialisasi Firebase.'));
   } catch (error) {
     startupError = error;
   }
